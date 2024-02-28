@@ -14,9 +14,7 @@ public class AccountSetting {
     public void clickSettingButton() {
         methods.wait(1);
         hamburgerPage.clickElement(hamburgerPage.hbSettings());
-
     }
-
     @Then("User should see and click settings elements")
     public void userShouldSeeAndClickSettingsElements() {
         methods.wait(1);
@@ -26,7 +24,6 @@ public class AccountSetting {
         stPage.isDisplayedElement(stPage.notification());
         stPage.isDisplayedElement(stPage.language());
         stPage.isDisplayedElement(stPage.signOut());
-
         stPage.clickElement(stPage.editAccount());
         hamburgerPage.clickElement(hamburgerPage.backButton());
         stPage.clickElement(stPage.switchSchool());
