@@ -11,7 +11,7 @@ public class CoursesDetailSteps {
     @Given("Click courses element in homepage")
     public void clickCoursesElementInHomepage() {
         methods.wait(1);
-        homePage.clickElement(homePage.coursesMenu());
+        homePage.clickElement(homePage.coursesMenu()); //method overriding dynamic polym. runtime
     }
 
     @When("User should see their course")

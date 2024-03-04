@@ -12,8 +12,8 @@ public class LogoutSteps {
     Methods methods=new Methods();
     @When("Click sign out button")
     public void clickSignOutButton() {
-        hamburgerPage.clickElement(hamburgerPage.hbSettings());
-        methods.wait(1);
+        hamburgerPage.clickElement(hamburgerPage.hbSettings()); //polym.
+        methods.wait(1); //overriding (Method class funct) OOP Polym.
         stPage.clickElement(stPage.signOut());
     }
 

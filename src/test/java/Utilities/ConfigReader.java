@@ -8,10 +8,10 @@ import java.util.Properties;
 public class ConfigReader {
     static Properties properties;
 
-    static {
+    static { //it will be executed first.
         try {
             String filePath = "configuration.properties";
-            FileInputStream fileInputStream = new FileInputStream(filePath);
+            FileInputStream fileInputStream = new FileInputStream(filePath); //to read configuration file
             properties = new Properties();
             properties.load(fileInputStream);
         } catch (FileNotFoundException e) {
@@ -23,7 +23,7 @@ public class ConfigReader {
 
     public static String getProperty(String key) {
         return properties.getProperty(key);
-    }
+    } //java oop-- encpsulation
 
     public static String get(String keyName) {
         return properties.getProperty(keyName);

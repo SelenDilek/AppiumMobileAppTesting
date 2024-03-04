@@ -6,12 +6,10 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import Utilities.Hooks;
 
-import static Utilities.Hooks.androidDriver;
-
 public class HamburgerPage extends Hooks {
 
     public HamburgerPage() {
-        PageFactory.initElements(androidDriver, this);
+        PageFactory.initElements(androidDriver, this); //android static not nessesary to initilate again.
     }
     public void isDisplayedElement(WebElement element) {
         Assert.assertTrue(element.isDisplayed());

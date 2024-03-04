@@ -1,5 +1,4 @@
 package Utilities;
-
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -8,7 +7,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class Hooks {
+public class Hooks { //I will extend for page class
     public static AndroidDriver<AndroidElement> androidDriver;
     static DesiredCapabilities capabilities = new DesiredCapabilities();
     public static WebDriverWait wait;
@@ -27,7 +26,6 @@ public class Hooks {
             System.out.println("Malformed Url Exception:" + e.getMessage());
         }
     }
-
     public void tearDown() {
         if (androidDriver != null) {
             androidDriver.quit();

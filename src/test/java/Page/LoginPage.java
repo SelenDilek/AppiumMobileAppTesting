@@ -29,6 +29,10 @@ public class LoginPage extends Hooks {
         element.sendKeys(keys);
 
     }
+    public void sendKeysMethod(WebElement element) {
+        element.submit();
+
+    }
 
     public WebElement usernameLabel() {
         return findByXpath

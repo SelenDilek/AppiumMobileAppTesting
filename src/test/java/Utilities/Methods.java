@@ -2,13 +2,19 @@ package Utilities;
 
 import io.appium.java_client.android.AndroidTouchAction;
 import io.appium.java_client.touch.offset.PointOption;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.Alert;
+
+import java.util.Set;
 
 import static io.appium.java_client.touch.offset.PointOption.point;
 
-public class Methods extends Hooks{
+public class Methods extends Hooks{ //inheritance JAVA OOPs
 
 
-    AndroidTouchAction action;
+    AndroidTouchAction action; //object and class part of the OOPs in JAVA
     public void wait(int sec) {
 
         try {
@@ -30,4 +36,33 @@ public class Methods extends Hooks{
                 .moveTo(point(toX, toY)).release()
                 .perform();
     }
+
+    public void alert(WebElement element){
+        WebDriverWait wait = new WebDriverWait(androidDriver, 5);
+        wait.until(ExpectedConditions.alertIsPresent());
+        Alert alert = androidDriver.switchTo().alert();
+        alert.accept();
+    }
+
+
+
+    public void windows(WebElement element){
+        WebDriverWait wait = new WebDriverWait(androidDriver, 5);
+        wait.until(ExpectedConditions.visibilityOf(element));
+        String homePage=androidDriver.getWindowHandle();
+        Set<String> id = androidDriver.getWindowHandles();
+        for(String ids : id){
+            if(! ids.equals(homePage)){
+                androidDriver.switchTo().window(ids);
+                System.out.println();
+            }
+
+        }
+    }
+
+
+
+
 }
+
+
